@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Add Note{% endblock %}
+{% block meta_description %}Here you can create your new note to check its uniqueness{% endblock %}
+{% block body %}
+        <div class="row">
+            <div class="col-12 mt-5">
+                <h1>Unique Notes</h1>
+                <div>* Notes ordered by number of unique words</div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <form class="col-12"  action="{{ url('note_create') }}" method="post">
+                <label for="title">Title:</label><br />
+                <input class="col-12" type="text" name="title" id="title"/>
+                <label for="description">Description:</label><br />
+                <textarea rows="15" class="col-12" name="description" id="description"></textarea>
+                <input class="btn btn-success" type="submit" value="+ Add Note" />
+            </form>
+        </div>
+{% endblock %}

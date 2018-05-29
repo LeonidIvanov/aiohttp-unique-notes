@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Unique Notes{% endblock %}
+{% block body %}
+        <div class="row">
+            <div class="col-12 mt-5">
+                <h1>Unique Notes</h1>
+                <div>Notes ordered by number of unique words</div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12">
+                {% for note in notes %}
+                <a href="{{ url('note_detail', note_id=note.id) }}">
+                    <h2>{{ note.id }}. {{ note.title }} <span>({{ note.unique_words }} unique words)</span></h2>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+{% endblock %}

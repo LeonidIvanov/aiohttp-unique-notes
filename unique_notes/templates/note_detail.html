@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}{{ note.title }}{% endblock %}
+{% block meta_description %}{{ note.description|slice(295) }}...{% endblock %}
+{% block body %}
+        <div class="row">
+            <h1 class="mt-5">{{ note.title }}</h1>
+        </div>
+        <div class="row">{{ note.unique_words }} unique words</div>
+        <div class="row mt-5">
+            <div>{{ note.description|safe }}</div>
+        </div>
+{% endblock %}
