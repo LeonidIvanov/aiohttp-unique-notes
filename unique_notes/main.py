@@ -26,13 +26,7 @@ def init():
     return app
 
 
-def main():
-    # init logging
-    logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.DEBUG)
 
-    app = init()
-    web.run_app(app)
-
-
-if __name__ == '__main__':
-    main()
+app = init()
+web.run_app(app)
