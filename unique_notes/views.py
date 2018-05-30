@@ -43,7 +43,6 @@ async def note_create(request):
             title = form['title']
             description = form['description']
             note_id = await db.note_create(conn, title, description)
-            print(note_id)
             router = request.app.router
             location = router['note_detail'].url_for(note_id=str(note_id))
             return web.HTTPFound(location=location)
