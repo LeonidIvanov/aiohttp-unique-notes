@@ -29,4 +29,3 @@ def init():
 logging.basicConfig(level=logging.DEBUG)
 
 app = init()
-web.run_app(app)
